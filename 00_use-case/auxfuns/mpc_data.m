@@ -1126,6 +1126,134 @@ function mpc=mpc_data(casefile)
                                 2 4  64  10;
                                 2 5  837  8;
                            ];
+                       
+    elseif strcmp(casefile, '1354X5')
+    % 5X1354                 
+        mpc.trans  = ext2int(loadcase('case1354pegase'));
+        mpc.dist = { ext2int(loadcase('case1354pegase'))
+                     ext2int(loadcase('case1354pegase'))
+                     ext2int(loadcase('case1354pegase'))
+                     ext2int(loadcase('case1354pegase'))
+                    };
+
+        mpc.connection_array = [1 2 17 46;
+                                1 3 111  271;   
+                                2 4 106  233;
+                                2 5 837  750;
+                           ];
+        
+    elseif strcmp(casefile, '1354X7')
+    % 7X1354         
+        mpc.trans  = ext2int(loadcase('case1354pegase'));
+        mpc.dist = { ext2int(loadcase('case1354pegase'))
+                    ext2int(loadcase('case1354pegase'))
+                    ext2int(loadcase('case1354pegase'))
+                    ext2int(loadcase('case1354pegase'))
+                    ext2int(loadcase('case1354pegase'))
+                    ext2int(loadcase('case1354pegase'))
+                    };
+       mpc.connection_array = [1 2 21 43;
+                               2 3 78 135; 
+                               1 4 233 239;
+                               4 5 87 500;
+                               5 6 210 624;
+                               1 7 367 694
+                               ];
+                       
+    elseif strcmp(casefile, '1354X8')
+    % 8X1354         
+        mpc.trans  = ext2int(loadcase('case1354pegase'));
+        mpc.dist = { ext2int(loadcase('case1354pegase'))
+                    ext2int(loadcase('case1354pegase'))
+                    ext2int(loadcase('case1354pegase'))
+                    ext2int(loadcase('case1354pegase'))
+                    ext2int(loadcase('case1354pegase'))
+                    ext2int(loadcase('case1354pegase'))
+                    ext2int(loadcase('case1354pegase'))
+                    };
+       mpc.connection_array = [1 2 21 43;
+                               2 3 78 135; 
+                               1 4 233 239;
+                               4 5 87 500;
+                               5 6 210 624;
+                               1 7 367 694
+                               1 8 345 749;
+%                                    8 9 10 74;
+%                                    7 9 70 113;
+%                                    8 10 19 100;
+                               ];
+                           
+    elseif strcmp(casefile, '1354X10')
+    % 10X1354         
+        mpc.trans  = ext2int(loadcase('case1354pegase'));
+        mpc.dist = { ext2int(loadcase('case1354pegase'))
+                    ext2int(loadcase('case1354pegase'))
+                    ext2int(loadcase('case1354pegase'))
+                    ext2int(loadcase('case1354pegase'))
+                    ext2int(loadcase('case1354pegase'))
+                    ext2int(loadcase('case1354pegase'))
+                    ext2int(loadcase('case1354pegase'))
+                    ext2int(loadcase('case1354pegase'))
+                    ext2int(loadcase('case1354pegase'))
+                    };
+       mpc.connection_array = [1 2 21 43;
+                               2 3 78 135; 
+                               1 4 233 239;
+                               4 5 87 500;
+                               5 6 210 624;
+                               1 7 367 694
+                               1 8 345 749;
+                               7 9 534 806;
+                               8 10 411 419;
+                               ];
+                           
+    elseif strcmp(casefile, '290') 
+    % 145+145 
+        mpc.trans  = ext2int(loadcase('case145'));
+        mpc.dist = { ext2int(loadcase('case145'))};
+
+        mpc.connection_array = [1 2 60 82
+                               ]; 
+                                                  
+    elseif strcmp(casefile, '145X3') 
+    % 3X145  
+        mpc.trans  = ext2int(loadcase('case145'));
+        mpc.dist = { ext2int(loadcase('case145'))
+                     ext2int(loadcase('case145'))
+                   };
+
+        mpc.connection_array = [1 2 60 82;
+                                2 3 80 103; 
+                                1 3 96 97;
+                               ];  
+                           
+    elseif strcmp(casefile, '145X5') 
+    % 5X145  
+        mpc.trans  = ext2int(loadcase('case145'));
+        mpc.dist = { ext2int(loadcase('case145'))
+                     ext2int(loadcase('case145'))
+                     ext2int(loadcase('case145'))
+                     ext2int(loadcase('case145'))
+                   };
+
+        mpc.connection_array = [1 2 60 82;
+                                1 3 80 103; 
+                                2 4 96 97;
+                                2 5 90 109;
+                               ];                      
+                  
+    elseif strcmp(casefile, '232') 
+    % 57+145+30 
+        mpc.trans  = ext2int(loadcase('case57'));
+        mpc.dist = { ext2int(loadcase('case145'))
+                     ext2int(loadcase('case30'))
+                   };
+
+        mpc.connection_array = [1 2 2 60;
+                                2 3 97 2; 
+                                1 3 9 22
+                               ]; 
+                           
     elseif strcmp(casefile, '120')
     % small mpc 14+30+9
         mpc.trans  = loadcase('case30');
@@ -1156,7 +1284,9 @@ function mpc=mpc_data(casefile)
     elseif strcmp(casefile, '78') 
 
         mpc.trans  = ext2int(loadcase('case39'));
-        mpc.dist = { ext2int(loadcase('case39'))};
+        mpc.dist = { ext2int(loadcase('case39'))
+                     ext2int(loadcase('case39'))
+                   };
                             % region 1 - region 2
         mpc.connection_array = [
                             % region 1 - region 2
