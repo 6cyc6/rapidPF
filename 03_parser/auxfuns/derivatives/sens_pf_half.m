@@ -8,6 +8,7 @@ function [grad, JJp, Hess] = sens_pf_half(state_var, r, state_0, Ybus, entries, 
     end
     V = Vm .* exp(1j * Va);
     [dS_dVa, dS_dVm] = dSbus_dV(Ybus, V);
+    %[dS_dVa, dS_dVm] = dSbus_dV_mod(Ybus, V, entries.variable.v_ang, entries.variable.v_mag);
     assert(numel(Va) == numel(Vm));
     assert(numel(P) == numel(Q));
     assert(numel(Va) == numel(buses_to_ignore) + numel(P));
